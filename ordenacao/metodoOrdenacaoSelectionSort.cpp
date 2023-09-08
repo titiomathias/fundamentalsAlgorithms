@@ -3,35 +3,36 @@
 using namespace std;
 
 int main(){
-	int N;
-	int menor, pos, temp;
+	int N; // Tamanho do vetor
+	int menor, pos, temp; // Variáveis de: menor valor, posição, e armazenamento temporário para swap
 	
-	cin >> N;
+	cin >> N; // Recebe o tamanho do vetor
 	
-	int vetor[N];
+	int vetor[N]; // Cria o vetor com o tamanho inserido
 	
-	for(int i = 0; i < N; i++){
-		cin >> vetor[i];
+	for(int i = 0; i < N; i++){ // Passa por cada posição do vetor
+		cin >> vetor[i]; // Lê e insere um valor na posição atual do vetor
 	}
 	
-	for(int j = 0; j < N; j++){
+	for(int j = 0; j < N; j++){ // Passa por cada posição do vetor
 		
-		menor = vetor[j];
+		menor = vetor[j]; // Assume como menor valor o primeiro valor do vetor
 		
-		for(int i = j; i < N; i++){
-			if(vetor[i] <= menor){
-				menor = vetor[i];
-				pos = i;
+		for(int i = j; i < N; i++){ // Para cada posição do vetor a partir do contador j, inicia a passagem pelo vetor
+			if(vetor[i] <= menor){ // Se a posição atual do vetor for menor ou igual ao menor número declarado
+				menor = vetor[i]; // O menor número passa a se tornar o número encontrado
+				pos = i; // A posição do menor número em questão é armazenada
 			}
 		}
-		
-		temp = vetor[j];
-		vetor[j] = menor;
-		vetor[pos] = temp;
+
+		// Processo de Swap
+		temp = vetor[j]; // O valor inicialmente declarado como menor assume a variável temp
+		vetor[j] = menor; // O valor inicial do vetor declarado como j assume o menor valor
+		vetor[pos] = temp; // A posição anterior do menor valor do vetor recebe a variável temp
 	}
 	
-	for(int i = 0; i < N; i++){
-		cout << vetor[i] << " ";
+	for(int i = 0; i < N; i++){ // Passa por cada posição do vetor
+		cout << vetor[i] << " "; // Mostra o valor da respectiva posição na tela
 	}
 	
 	return 0;
