@@ -2,6 +2,13 @@
 
 using namespace std;
 
+/*
+
+O Selection Sort é um algoritmo de ordenação que parte da ideia de sempre buscar um menor valor e colocá-lo no início do vetor.
+Esse processo se repetirá n-1 vezes necessárias, até os últimos dois elementos de um vetor.
+
+*/
+
 int main(){
 	int N; // Tamanho do vetor
 	int menor, pos, temp; // Variáveis de: menor valor, posição, e armazenamento temporário para swap
