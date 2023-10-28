@@ -1,6 +1,9 @@
 #include <iostream>
 using namespace std;
 
+// Esta ainda é uma versão beta do quicksort utilizando recursividade, tive alguns problemas no desenvolvimento.
+// Além do que, também não testei em muitos casos de ordenação diferentes, mas aparentemente seu funcionamento está razoável.
+
 int divide(int vetor[], int inicio, int fim){
 	int pivo = vetor[inicio + (fim - inicio) / 2];
 	
