@@ -2,6 +2,9 @@
 
 using namespace std;
 
+// This code will make a insertion using linear hashing.
+// Will be show in the screen the inserted values in the respective positions at the vector, and if the position is null, she will keep with your original value (-1).
+
 struct dado{
 	int valor;
 	int status;
