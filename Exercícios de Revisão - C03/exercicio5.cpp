@@ -12,6 +12,17 @@ int hash2(int k, int m) {
     return 1 + (k % (m - 1));
 }
 
+int hash_insert(int vetor[], int m, int k){
+	int i = hash1(k, m);
+	int j = hash2(k, m);
+	
+	while(vetor[i]!=-1){
+		i = (i+j) % m;
+	}
+	
+	return i;
+}
+
 int main() {
     int m, n;
     int numero;
@@ -37,11 +48,7 @@ int main() {
         int elemento = pilha.back();
         pilha.pop_back();
 
-        if (vetor[hash1(elemento, m)] == -1) {
-            vetor[hash1(elemento, m)] = elemento;
-        } else {
-            vetor[hash2(elemento, m)] = elemento;
-        }
+        vetor[hash_insert(vetor, m, elemento)] = elemento;
     }
 
     for (int i = 0; i < m; i++) {
